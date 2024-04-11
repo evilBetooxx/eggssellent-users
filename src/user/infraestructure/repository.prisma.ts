@@ -15,11 +15,15 @@ export class UserRepositoryPrisma implements IUserRepository {
         username: user.username,
         password: user.password,
         photo: user.photo,
-        eggs: [],
+        eggs: user.eggs,
         createdAt: user.createdAt,
         updatedAt: user.updatedAt,
       },
     });
+
+    if (!userSaved) {
+      throw new Error("Ocurrió un error al guardar el usuario");
+    }
 
     return new User(
       userSaved.username,
@@ -37,6 +41,10 @@ export class UserRepositoryPrisma implements IUserRepository {
         username: user.username,
       },
     });
+
+    if (!userSaved) {
+      throw new Error("Invalid credentials");
+    }
 
     return new User(
       userSaved.username,
@@ -56,12 +64,16 @@ export class UserRepositoryPrisma implements IUserRepository {
     return "VerifyToken";
   }
 
-  async findByUsername(username: string): Promise<User> {
+  async findByUsername(username: string): Promise<any> {
     const userSaved = await this.prisma.user.findFirst({
       where: {
         username: username,
       },
     });
+
+    if (!userSaved) {
+      return null;
+    }
 
     return new User(
       userSaved.username,

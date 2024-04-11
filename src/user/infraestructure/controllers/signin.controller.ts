@@ -6,7 +6,6 @@ export class SignInController {
 
   async run(req: Request, res: Response) {
     const { username, password } = req.body;
-
     try {
       const user = await this.signInUseCase.run(username, password);
       res.status(200).json(user);

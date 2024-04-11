@@ -14,7 +14,7 @@ export class JsonWebTokenUtility implements IJsonWebTokenRepository {
           resolve(token || "");
         }
       );
-    });
+    });  
   }
 
   async verifyToken(
