@@ -17,8 +17,7 @@ export class signIn {
     if (!isMatch) {
       throw new Error("Invalid password");
     }
-
-
+    
     return user;
   }
 }
