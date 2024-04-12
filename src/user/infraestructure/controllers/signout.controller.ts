@@ -5,10 +5,8 @@ export class SignOutController {
   constructor(private signOutUseCase: signOut) {}
 
   async run(req: Request, res: Response) {
-    const { username } = req.body;
-
     try {
-      const message = await this.signOutUseCase.run(username);
+      const message = await this.signOutUseCase.run(res);
       res.status(200).json({ message });
     } catch (error: any) {
       res.status(400).json({ message: error.message });

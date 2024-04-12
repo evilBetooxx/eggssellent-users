@@ -56,8 +56,8 @@ export class UserRepositoryPrisma implements IUserRepository {
     );
   }
 
-  async signout(username: string): Promise<String> {
-    return "Signout";
+  async signout(): Promise<String> {
+    return "Finalizaste la sesión";
   }
 
   async verifyToken(token: string): Promise<String> {
