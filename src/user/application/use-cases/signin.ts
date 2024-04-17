@@ -23,7 +23,6 @@ export class signIn {
     if (!isMatch) {
       throw new Error("Contraseña Incorrecta");
     }
-    console.log(user);
     return user;
   }
 }

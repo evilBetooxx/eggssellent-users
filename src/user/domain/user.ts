@@ -5,6 +5,6 @@ export class User {
     public photo: string,
     public eggs: string[],
     public createdAt: Date,
-    public updatedAt: Date
+    public updatedAt: Date,
   ) {}
 }

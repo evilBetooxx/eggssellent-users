@@ -12,7 +12,6 @@ export class SignUpController {
     try {
       const user = await this.signUpUseCase.run(username, password);
       const token = await jwt.signToken({ username: user.username });
-      console.log(token)
       res.cookie('token', token, {
         httpOnly: true,
         secure: true,

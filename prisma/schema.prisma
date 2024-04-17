@@ -15,10 +15,10 @@ datasource db {
 
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  username     String   @unique
+  username  String   @unique
   password  String
-  photo    String
-  eggs String[]
+  photo     String
+  eggs      String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
