@@ -13,7 +13,7 @@ app.disable("x-powered-by");
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors({
-    origin: "https://eggssellent-frontend.vercel.app",
+    origin: "https://eggssellent-frontend.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "PREFLIGHT"],
     credentials: true,
 }));
